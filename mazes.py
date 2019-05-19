@@ -1,6 +1,6 @@
 import requests
 import sys
-def play_game():
+def run():
 	base_url = 'http://ec2-34-212-54-152.us-west-2.compute.amazonaws.com/'
 	token = requests.post(base_url+'session', data={'uid':'005099109'})
 	token = token.json()['token']
@@ -57,4 +57,4 @@ def play_game():
 	info = info.json()
 	print(info['levels_completed'])
 for i in range(5):
-	play_game()
+	run()
