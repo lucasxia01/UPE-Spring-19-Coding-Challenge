@@ -9,7 +9,7 @@ Solution uses Python Requests library to handle GET and POST requests to the ser
 ### How to Run
 To run the program, use:
 ```
-  python3 mazes.py
+$ python3 mazes.py
 ```
 on the command line.
 
