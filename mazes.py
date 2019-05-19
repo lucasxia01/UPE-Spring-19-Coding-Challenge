@@ -50,11 +50,8 @@ def run():
 				return True
 			#printMaze(loc)
 		return False
-
-	print(dfs([cur_X, cur_Y]))
-
-	info = requests.get(base_url+'game?token='+token)
-	info = info.json()
-	print(info['levels_completed'])
+	
+	dfs([cur_X, cur_Y])
+	
 for i in range(5):
 	run()
