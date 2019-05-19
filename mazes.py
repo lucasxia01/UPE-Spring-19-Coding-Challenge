@@ -32,9 +32,11 @@ def run():
 		for i in range(4):
 			res = requests.post(base_url+'game?token='+token, data={'action':dirs[i]})
 			res = res.json()['result']
-			#print("{}, {}, {}".format(loc[0] + dy[i], loc[1] + dx[i], res, dirs[i]))
 			if res == 'INVALID':
-				break;
+				break
+			elif res == 'EXPIRED':
+				print('Expired Time')
+				return False
 			elif res == -2 or res == -1:
 				if loc[0] + dy[i] >= 0 and loc[0] + dy[i] < rows and loc[1] + dx[i] >= 0 and loc[1] + dx[i] < cols:
 					maze[loc[0] + dy[i]][loc[1] + dx[i]] = 'X'
@@ -48,9 +50,8 @@ def run():
 				# reset everything
 				print("Found!")
 				return True
-			#printMaze(loc)
 		return False
-	
+
 	dfs([cur_X, cur_Y])
 	
 for i in range(5):
