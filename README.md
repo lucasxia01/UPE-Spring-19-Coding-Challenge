@@ -7,6 +7,10 @@ Specification of the Challenge: https://gist.github.com/kylewong975/1af2ad3bcd81
 Solution uses Python Requests library to handle GET and POST requests to the server and uses depth-first search with recursion as the algorithm to find the exit.
 
 ### How to Run
+Make sure you have the necessary requests package installed for python3. To install, run
+```
+$ pip3 install requests
+```
 To run the program, use:
 ```
 $ python3 mazes.py
